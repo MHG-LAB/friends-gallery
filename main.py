@@ -3,15 +3,15 @@ import yaml
 import os
 import random
 id=1
-
+CDN="https://cdn.jsdelivr.net/gh/MHG-LAB/friends-gallery@gh-page"
 html0='''<!DOCTYPE html>
 <html lang="en" class="no-js">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>domo</title>
-
-		<link rel="stylesheet" type="text/css" href="./assets/base.css" />
+		<title>Friends Gallery</title>
+                <link rel="shortcut icon" type="image/x-icon" sizes="16x16 32x32 48x48 64x64" href="https://cdn.jsdelivr.net/npm/mhg@0.0.0/favicon/favicon.ico">
+		<link rel="stylesheet" type="text/css" href="'''+CDN+'''/assets/base.css" />
 		
 		<script>document.documentElement.className="js";var supportsCssVars=function(){var e,t=document.createElement("style");return t.innerHTML="root: { --tmp-var: bold; }",document.head.appendChild(t),e=!!(window.CSS&&window.CSS.supports&&window.CSS.supports("font-weight","var(--tmp-var)")),t.parentNode.removeChild(t),e};supportsCssVars()||alert("Please view this demo in a modern browser that supports CSS Variables.");</script>
 		
@@ -52,9 +52,9 @@ html4='''
 				<button class="overlay__close"><svg class="icon icon--cross"><use xlink:href="#icon-cross"></use></svg></button>
 			</div>
 		</main>
-		<script src="./assets/imagesloaded.pkgd.min.js"></script>
-		<script src="./assets/TweenMax.min.js"></script>
-		<script src="./assets/demo.js"></script>	
+		<script src="'''+CDN+'''/assets/imagesloaded.pkgd.min.js"></script>
+		<script src="'''+CDN+'''/assets/TweenMax.min.js"></script>
+		<script src="'''+CDN+'''/assets/demo.js"></script>	
 	</body>
 </html>
 '''
@@ -90,7 +90,7 @@ for i in items:
                         <a class="grid__item" href="#preview-'''+str(id)+'''">
                                 <div class="box">
                                         <div class="box__shadow"></div>
-                                        <img class="box__img" src="./img/'''+i['title']+'''.jpg" alt="'''+i['title']+'''"/>
+                                        <img class="box__img" src="'''+CDN+'''/img/'''+i['title']+'''.jpg" alt="'''+i['title']+'''"/>
                                         <h3 class="box__title '''+random.choice(box__title)+''' '''+random.choice(box__title)+'''"><span class="box__title-inner" data-hover="'''+i['title']+'''">'''+i['title']+'''</span></h3>
                                         <p class="box__content">"'''+i['description']+'''"</p>
                                 </div>
@@ -100,7 +100,7 @@ for i in items:
                         <div class="overlay__item" id="preview-'''+str(id)+'''">
                                 <div class="box">
                                         <div class="box__shadow"></div>
-                                        <img class="box__img  box__img--original" src="./img/'''+i['title']+'''.jpg" alt="'''+i['title']+'''"/>
+                                        <img class="box__img  box__img--original" src="'''+CDN+'''/img/'''+i['title']+'''.jpg" alt="'''+i['title']+'''"/>
                                         <h3 class="box__title '''+random.choice(box__title)+''' '''+random.choice(box__title)+'''"><span class="box__title-inner">'''+i['title']+'''</span></h3>
                                         <h4 class="box__text  '''+random.choice(box__text)+'''  '''+random.choice(box__text)+'''"><span class="box__text-inner">'''+i['url']+'''</span></h4>
                                         <div class="box__deco">'''+random.choice(deco)+'''</div>
