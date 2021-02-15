@@ -61,7 +61,7 @@ html4='''
 
 
 try:
-    os.mkdir("./pubilc/img")
+    os.mkdir("./public/img")
 except:
     pass
 
@@ -111,7 +111,7 @@ for i in items:
     id=id+1
 
 html=html0+html1+html2+html3+html4
-f = open("./pubilc/index.html", "w",encoding="utf-8")
+f = open("./public/index.html", "w",encoding="utf-8")
 print(html,file = f)
 f.close()
 
