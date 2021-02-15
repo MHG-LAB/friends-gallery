@@ -349,3 +349,6 @@
     // Preload all the images in the page..
     imagesLoaded(document.querySelectorAll('.box__img'), () => document.body.classList.remove('loading'));
 }
+
+console.log("Hey，想看源码")
+console.log("Here => https://github.com/MHG-LAB/friends-gallery/")
