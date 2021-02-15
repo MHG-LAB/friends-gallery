@@ -80,7 +80,7 @@ box__text=["","box__text--bottom","box__text--topcloser","box__text--right"]
 for i in items:
     print(i['url'])
     #'''
-    shell= "curl https://image.thum.io/get/width/1200/crop/1100/wait/10/"+i['url']+" -o ./pubilc/img/"+i['title']+".jpg"
+    shell= "curl https://image.thum.io/get/width/1200/crop/1100/wait/10/"+i['url']+" -o ./public/img/"+i['title']+".jpg"
     d=os.popen(shell)
     print(shell)
     f=d.read()
