@@ -1,0 +1,41 @@
+name: Deploy To Github Pages
+
+on:
+  push:
+    branches:
+    - master
+  workflow_dispatch:
+jobs:
+  deploy:
+    name: Deploy Public To Pages
+    runs-on: ubuntu-latest
+    env:
+      TZ: Asia/Shanghai
+    steps:
+    - name: Checkout Repository master branch
+      uses: actions/checkout@master
+      with:
+        submodules: "true"
+    - name: Setup Python 3.7
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.7'
+        architecture: 'x64'
+    - name: Pip Install Globel Dependencies 
+      run: |
+        pip install pyyaml==0.2.5
+    - name: Clone and build
+      run: |
+        git clone https://github.com/MHuiG/friends
+        python ./main.py
+
+    - name: Deploy Github
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        deploy_key: ${{ secrets.TOKEN }}
+        publish_dir: ./public
+        user_name: 'github-actions[bot]'
+        user_email: 'github-actions[bot]@users.noreply.github.com'
+        external_repository: xxxMHuiG/MHuiG.github.io
+        publish_branch: xxxxmaster
+
