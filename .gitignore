@@ -5,5 +5,5 @@ db.json
 node_modules/
 .deploy*/
 friends/
-pubilc/img/*
-pubilc/index.html
+public/img/*
+public/index.html
