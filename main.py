@@ -98,6 +98,7 @@ for i in items:
     '''
     html3+='''
                         <div class="overlay__item" id="preview-'''+str(id)+'''">
+                            <a href="'''+i['url']+'''" target="_blank" rel="external nofollow noopener noreferrer">
                                 <div class="box">
                                         <div class="box__shadow"></div>
                                         <img class="box__img  box__img--original" src="'''+CDN+'''/img/'''+i['title']+'''.jpg" alt="'''+i['title']+'''"/>
@@ -105,6 +106,7 @@ for i in items:
                                         <h4 class="box__text  '''+random.choice(box__text)+'''  '''+random.choice(box__text)+'''"><span class="box__text-inner">'''+i['url']+'''</span></h4>
                                         <div class="box__deco">'''+random.choice(deco)+'''</div>
                                 </div>
+                            </a>
                                 <p class="overlay__content">'''+i['description']+'''</p>
                         </div>
     '''
