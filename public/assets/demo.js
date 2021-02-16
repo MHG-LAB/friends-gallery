@@ -191,7 +191,10 @@
                     TweenMax.to(this.DOM.reveal, .5, {
                         delay: 0.2,
                         ease: 'Power3.easeOut',
-                        x: '-100%'
+                        x: '-100%',
+						onComplete: () => {
+							this.contentItem.style["z-index"] = 100;
+						}
                     });
 
                     this.DOM.close.style.opacity = 1;
@@ -200,7 +203,6 @@
         }
         revealItem() {
             this.contentItem.style.opacity = 1;
-            this.contentItem.style["z-index"] = 100;
 
             let itemElems = [];
             itemElems.push(this.contentItem.querySelector('.box__shadow'));
@@ -230,7 +232,7 @@
         }
         hide() {
             this.DOM.el.classList.remove('overlay--open');
-
+			this.contentItem.style["z-index"] = 0;
             // show revealer
             TweenMax.to(this.DOM.reveal, .5, {
                 //delay: 0.15,
@@ -242,7 +244,6 @@
                     document.body.classList.remove('preview-open');
                     // hide preview
                     this.contentItem.style.opacity = 0;
-					this.contentItem.style["z-index"] = 0;
                     // hide revealer
                     TweenMax.to(this.DOM.reveal, .5, {
                         delay: 0,
