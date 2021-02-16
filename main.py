@@ -72,7 +72,7 @@ f = open(yamlPath,'r',encoding='utf-8')
 cont = f.read()
 x = yaml.load(cont, Loader=yaml.FullLoader)
 items=x[1]['items']
-
+random.shuffle(items) 
 deco=["","&#10014;","&#10032;","&#10153;"]
 deco_p=["","box__deco--top","box__deco--left"]
 box__title=["",'box__title--straight','box__title--bottom','box__title--left']
