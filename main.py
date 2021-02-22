@@ -2,6 +2,7 @@
 import yaml
 import os
 import random
+import time
 id=1
 CDN="https://cdn.jsdelivr.net/gh/MHG-LAB/friends-gallery@gh-page"
 html0='''<!DOCTYPE html>
@@ -80,7 +81,7 @@ box__text=["","box__text--bottom","box__text--topcloser","box__text--right"]
 for i in items:
     print(i['url'])
     #'''
-    shell= "curl https://image.thum.io/get/width/1200/crop/1100/wait/10/"+i['url']+" -o ./public/img/"+i['title']+".jpg"
+    shell= "curl https://image.thum.io/get/width/1200/crop/1100/wait/10/"+i['url']+"?t="+str(time.time())+" -o ./public/img/"+i['title']+".jpg"
     d=os.popen(shell)
     print(shell)
     f=d.read()
