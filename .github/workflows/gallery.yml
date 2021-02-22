@@ -39,4 +39,6 @@ jobs:
         user_name: 'github-actions[bot]'
         user_email: 'github-actions[bot]@users.noreply.github.com'
         publish_branch: gh-page
-
+    - name: Purge
+      run: |
+        python ./purge.py
